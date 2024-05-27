@@ -163,11 +163,20 @@ nav li {
     padding: 15px 10px;
 }
 
-nav a {
+.navbar-link {
     color: var(--font-white);
     text-decoration: none;
     margin: 10px;
     font-size: 1.2em;
+}
+/* 
+.navbar-link:hover,
+.navbar-link:focus a {
+    color: var(--font-gray80);
+} */
+
+.navbar-link.current {
+    color: var(--teal-dark) !important;
 }
 
 .logo {
@@ -306,7 +315,7 @@ ion-icon {
 }
 
 .timeline-text {
-    color: var(--font-gray70);
+    color: var(--font-gray80);
     font-weight: var(--fw-300);
     line-height: 1.6;
 }
