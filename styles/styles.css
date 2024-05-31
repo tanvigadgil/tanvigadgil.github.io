@@ -169,6 +169,7 @@ nav li {
     margin: 10px;
     font-size: 1.2em;
 }
+
 /* 
 .navbar-link:hover,
 .navbar-link:focus a {
@@ -399,4 +400,49 @@ ion-icon {
     font-weight: var(--fw-400);
     line-height: 1.3;
     text-wrap: pretty;
+}
+
+/* 
+    Responsive
+*/
+
+/* General responsive settings */
+@media (max-width: 1024px) {
+    .show-navbar .landing-page {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: -100%;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .landing-page.show {
+        left: 0;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: 100%;
+    }
+
+    .show-navbar .main-content {
+        margin-left: 0;
+        padding: 20px;
+        padding: 15% 6%;
+    }
+
+    article {
+        padding: 10px;
+    }
+}
+
+/* Navbar for larger screens */
+@media (min-width: 1024px) {
+    .sidebar {
+        width: 25%;
+    }
+
+    .main-content {
+        margin-left: 25%;
+    }
 }
