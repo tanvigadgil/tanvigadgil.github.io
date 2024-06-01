@@ -51,4 +51,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add scroll event listener to window
     window.addEventListener('scroll', updateNavbarLink);
+
+    // Overlay functionality for project items
+    const projectsItem = document.querySelectorAll("[data-projects-item]");
+    const modalContainer = document.querySelector("[data-modal-container]");
+    const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
+    const overlay = document.querySelector("[data-overlay]");
+
+    // modal variable
+    // const modalImg = document.querySelector("[data-modal-img]");
+    const modalTitle = document.querySelector("[data-modal-title]");
+    const modalVideo = document.querySelector("[data-modal-video]");
+    const modalText = document.querySelector("[data-modal-text]");
+
+    // modal toggle function
+    const projectsModalFunc = function () {
+        modalContainer.classList.toggle("active");
+        overlay.classList.toggle("active");
+
+        if (!modalContainer.classList.contains("active")) {
+            // Stop the video when the modal is closed
+            modalVideo.pause();
+            modalVideo.src = '';
+        }
+    }
+
+    // add click event to all modal items
+    for (let i = 0; i < projectsItem.length; i++) {
+
+        projectsItem[i].addEventListener("click", function () {
+
+            // modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
+            // modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
+            modalTitle.innerHTML = this.querySelector("[data-projects-title]").innerHTML;
+            modalVideo.src = this.querySelector("[data-projects-video]").src;
+            modalVideo.play(); // Play the video automatically
+            modalText.innerHTML = this.querySelector("[data-projects-text]").innerHTML;
+
+            projectsModalFunc();
+
+        });
+    }
+
+    // add click event to modal close button
+    modalCloseBtn.addEventListener("click", projectsModalFunc);
+    overlay.addEventListener("click", projectsModalFunc);
 });
