@@ -614,6 +614,10 @@ ion-icon {
     .project-modal {
         width: 70%;
     }
+
+    .project-video {
+        width: 280px;
+    }
 }
 
 /* Navbar for larger screens */
