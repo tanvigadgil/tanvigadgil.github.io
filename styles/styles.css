@@ -158,6 +158,10 @@ ul {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 nav li {
     list-style: none;
     padding: 15px 10px;
