@@ -25,6 +25,9 @@
     --text-gradient-teal: linear-gradient(to right,
             rgba(59, 240, 240, 1) 0%,
             rgba(44, 182, 182, 1) 63%);
+    --border-gradient-onyx: linear-gradient(to bottom right,
+            hsl(0, 0%, 20%) 0%,
+            hsla(0, 0%, 25%, 0) 50%);
 
     /* Fonts */
     --fs-0: 28px;
@@ -419,7 +422,7 @@ ion-icon {
     position: relative;
     /* height: 400px;
     width: 350px; */
-    background: var(--bg-gradient-grey);
+    background: var(--border-gradient-onyx);
     padding: 15px;
     /* padding-top: 45px; */
     border-radius: 14px;
@@ -432,7 +435,6 @@ ion-icon {
     content: "";
     position: absolute;
     inset: 1px;
-    /* background: var(--bg-gradient-jet); */
     border-radius: inherit;
     z-index: -1;
 }
@@ -493,17 +495,21 @@ ion-icon {
 }
 
 .project-modal {
-    background: var(--background-black);
+    background: var(--eerie-black-2);
     position: relative;
     top: 0;
     left: 0;
     width: 50%;
-    height: 50%;
+    height: auto;
     padding: 15px;
-    margin: 15px 12px;
     transform: scale(1.2);
     transition: var(--transition-1);
     z-index: 2;
+    border-radius: 8px;
+}
+
+.modal-title {
+    padding: 0px;
 }
 
 .modal-container.active .projects-modal {
@@ -517,15 +523,15 @@ ion-icon {
     right: 15px;
     background: var(--onyx);
     border-radius: 8px;
+    border: none;
     width: 30px;
     height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: var(--fs-3);
+    font-size: var(--fs-4);
     color: var(--teal-dark);
-    /* box-shadow: var(--shadow-1); */
-    opacity: 0.9;
+    opacity: 0.7;
 }
 
 .modal-close-btn:hover,
@@ -537,18 +543,30 @@ ion-icon {
     --ionicon-stroke-width: 50px;
 }
 
-.flex-parent {
+.modal-div {
     display: flex;
-    gap: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
 }
 
-.flex-child {
-    flex: 1;
-}
-
-.overlay-video {
+.project-video {
     width: 320px;
     height: 200px;
+    justify-self: center;
+    padding-bottom: 16px;
+}
+
+.project-ul {
+    text-align: justify;
+    font-size: var(--fs-7);
+    padding-right: 10px;
+}
+
+.project-ul li {
+    margin-left: 20px;
+    list-style: circle;
 }
 
 /* 
@@ -580,6 +598,10 @@ ion-icon {
     .project-list {
         margin-left: 15%;
         gap: 10%;
+    }
+
+    .project-modal {
+        width: 70%;
     }
 }
 
