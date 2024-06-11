@@ -182,12 +182,6 @@ nav li {
     font-size: 1.2em;
 }
 
-/* 
-.navbar-link:hover,
-.navbar-link:focus a {
-    color: var(--font-gray80);
-} */
-
 .navbar-link.current {
     color: var(--teal-dark) !important;
 }
@@ -287,6 +281,12 @@ ion-icon {
 .timeline-item {
     list-style: none;
     position: relative;
+}
+
+.timeline-item-title,
+.timeline-item-title a {
+    color: var(--font-white);
+    text-decoration: none;
 }
 
 .timeline-item:not(:last-child) {
