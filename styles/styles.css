@@ -96,6 +96,11 @@ body {
     font-weight: var(--fw-500);
 }
 
+.about-text {
+    font-size: var(--fs-6);
+    color: var(--font-white-2);
+}
+
 article {
     min-height: 100vh;
     padding-top: 40px;
